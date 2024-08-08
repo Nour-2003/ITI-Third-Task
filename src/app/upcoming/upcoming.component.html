@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-between mx-5 mt-3">
+    <div class="col-5 ms-4">
+      <button class="btn btn-dark btn-lg ms-5" (click)="prevPage()">
+        Prev
+      </button>
+    </div>
+    <div class="col-5 text-end me-4">
+      <button class="btn btn-dark btn-lg me-5" (click)="nextPage()">
+        Next
+      </button>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div
+      class="movie-card col-lg-3 col-md-6 col-sm-12 m-3 border border-2 rounded-3"
+      *ngFor="let movie of Upcominglist"
+      (click)="displayId(movie.id)"
+      [routerLink]="['/details', movie.id]"
+      style="cursor: pointer;"
+    >
+      <img
+        src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+        alt="{{ movie.title }}"
+        class="card-img rounded-3"
+      />
+      <h2 class="movie-title">{{ movie.title }}</h2>
+      <p class="movie-description">{{ movie.overview }}</p>
+      <p class="movie-rating">
+        <span class="fw-bolder">Rating:</span> {{ movie.vote_average |
+        floor}}/10
+      </p>
+    </div>
+  </div>
+</div>

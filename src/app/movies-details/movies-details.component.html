@@ -1,0 +1,29 @@
+<div
+  class="container movie-details mt-5 p-4 border rounded shadow bg-white mb-5"
+>
+  <div class="row">
+    <div class="col-md-4 text-center mb-3 mb-md-0">
+      <img
+        src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+        alt="{{ movie.title }}"
+        class="img-fluid rounded"
+      />
+    </div>
+    <div class="col-md-8">
+      <h1 class="display-4">{{ movie.title }}</h1>
+      <hr />
+      <p class="fs-5">
+        <strong>Release Date:</strong> {{ movie.release_date }}
+      </p>
+      <p class="fs-5"><strong>Country:</strong> {{ movie.origin_country }}</p>
+      <p class="fs-5">
+        <strong>Genres: </strong>
+        <span *ngFor="let genre of movie.genres" class="badge bg-dark me-2"
+          >{{ genre.name }}</span
+        >
+      </p>
+      <p class="fs-5"><strong>Duration:</strong> {{ movie.runtime }} minutes</p>
+      <p class="fs-5"><strong>Description:</strong> {{ movie.overview }}</p>
+    </div>
+  </div>
+</div>

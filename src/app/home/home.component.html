@@ -1,0 +1,195 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="container text-center mt-5">
+    <div class="jumbotron">
+      <h1 class="display-4 fw-bold">Welcome to Our Movies Website!</h1>
+      <p class="lead">
+        Our site allows you to fetch and view detailed information about movies.
+      </p>
+      <hr class="my-4" />
+      <p class="fs-5">
+        Browse through our movie list to see detailed profiles, including their
+        ratings, reviews, trailers, and much more.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2
+        class="text-center fw-bolder"
+        style="font-family: 'Times New Roman', Times, serif;"
+      >
+        Top Rated Movies
+      </h2>
+      <div
+        id="carouselExampleIndicators1"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <button
+            *ngFor="let movie of Top_Ratedlist; let i = index"
+            [attr.data-bs-target]="'#carouselExampleIndicators1'"
+            [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0"
+            [attr.aria-current]="i === 0 ? 'true' : null"
+            [attr.aria-label]="'Slide ' + (i + 1)"
+          ></button>
+        </div>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div
+            *ngFor="let movie of Top_Ratedlist; let i = index"
+            class="carousel-item"
+            [class.active]="i === 0"
+          >
+            <img
+              [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+              class="d-block w-100 rounded-2"
+              style="height: 500px;"
+              alt="Movie Image"
+            />
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators1"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators1"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col">
+      <h2
+        class="text-center fw-bolder"
+        style="font-family: 'Times New Roman', Times, serif;"
+      >
+        Upcoming Movies
+      </h2>
+      <div
+        id="carouselExampleIndicators2"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <button
+            *ngFor="let movie of Upcominglist; let i = index"
+            [attr.data-bs-target]="'#carouselExampleIndicators2'"
+            [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0"
+            [attr.aria-current]="i === 0 ? 'true' : null"
+            [attr.aria-label]="'Slide ' + (i + 1)"
+          ></button>
+        </div>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div
+            *ngFor="let movie of Upcominglist; let i = index"
+            class="carousel-item"
+            [class.active]="i === 0"
+          >
+            <img
+              [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+              class="d-block w-100 rounded-2"
+              style="height: 500px;"
+              alt="Movie Image"
+            />
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators2"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators2"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col">
+      <h2
+        class="text-center fw-bolder"
+        style="font-family: 'Times New Roman', Times, serif;"
+      >
+        Popular Movies
+      </h2>
+      <div
+        id="carouselExampleIndicators3"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <button
+            *ngFor="let movie of Popularlist; let i = index"
+            [attr.data-bs-target]="'#carouselExampleIndicators3'"
+            [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0"
+            [attr.aria-current]="i === 0 ? 'true' : null"
+            [attr.aria-label]="'Slide ' + (i + 1)"
+          ></button>
+        </div>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div
+            *ngFor="let movie of Popularlist; let i = index"
+            class="carousel-item"
+            [class.active]="i === 0"
+          >
+            <img
+              [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+              class="d-block w-100 rounded-2"
+              style="height: 500px;"
+              alt="Movie Image"
+            />
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators3"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators3"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
